@@ -14,6 +14,13 @@ namespace CustomListTests
         private int capacity;
 
 
+        public CustomList()
+        {
+            count = 0;
+            capacity = 4;
+            items = new T[capacity];
+        }
+
         public T this[int index]
         {
             get
@@ -39,6 +46,7 @@ namespace CustomListTests
             {
                 return count;
             }
+
         }
 
         public int Capacity
@@ -47,13 +55,14 @@ namespace CustomListTests
             {
                 return capacity;
             }
-        }
+            set
+            {
+                if (value >= 0)
+                {
 
-        public CustomList()
-        {
-            count = 0;
-            capacity = 4;
-            items = new T[capacity];
+                }
+
+            }
         }
 
         public void Add(T item)
@@ -62,6 +71,11 @@ namespace CustomListTests
             count++;
         }
 
+        public void Remove(T item)
+        {
+            items[count] = item;
+            count--;
+        }
 
 
 

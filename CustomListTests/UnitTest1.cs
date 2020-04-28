@@ -2,6 +2,8 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Sandbox;
 
+
+
 namespace CustomListTests
 {
     [TestClass]
@@ -53,7 +55,7 @@ namespace CustomListTests
 
             // act
             testList.Add(itemToAdd);
-            testList.Add(secondItemToAdd)
+            testList.Add(secondItemToAdd);
             actual = testList.Count;
 
             // assert
@@ -99,9 +101,10 @@ namespace CustomListTests
             testList.Add(fourthItemToAdd);
             testList.Add(fifthItemToAdd);
             actual = testList[4];
-            
+
             // assert
             Assert.AreEqual(expected, actual);
+        }
              //4
         [TestMethod]
         public void Add_AddingFiveValuesToEmptyCustomList_ListCapacityDoubles()
@@ -139,7 +142,7 @@ namespace CustomListTests
             int actual;
 
             // act
-            testList.Add(itemToAdd)
+            testList.Add(itemToAdd);
             testList.Remove(itemToRemove);
             actual = testList.Count;
 
