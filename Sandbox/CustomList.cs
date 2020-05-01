@@ -7,12 +7,14 @@ using System.Threading.Tasks;
 
 namespace Sandbox
 {
-    public class CustomList<T> where T : IEnumerator
+    public class CustomList<T> /*where T : IEnumerator*/
     {
         private T[] items;
         private int count;
 
         private int capacity;
+        public string customList { get; set; };
+
 
 
         public CustomList()
@@ -20,8 +22,35 @@ namespace Sandbox
             count = 0;
             capacity = 4;
             items = new T[capacity];
-            CustomList<T>  = CustomList<T>();
+            //CustomList<int> one = new CustomList<int>() { 1, 3, 5 };
+            //CustomList<int> two = new CustomList<int>() { 2, 4, 6 };
+
+
+                
+
         }
+
+        //public static CustomList operator + (CustomList customList1, CustomList customList2 )
+        //{
+        //    CustomList customListResult = new CustomList()
+        //}
+
+
+        //public IEnumerator GetEnumerator()
+        //{
+        //    for (int i = 0; i < count; i++)
+        //    {
+        //        yield return CustomList<T>[index];
+        //    }
+        //}
+
+
+        public override string ToString()
+        {
+            return this.CustomList;
+        }
+
+
 
         public T this[int index]
         {
@@ -88,60 +117,29 @@ namespace Sandbox
             count++;
 
         }
-        //increase the capacity of your inner array when count becomes equal to capacity
-        //do a check for this
-        //increase the capacity times 2
-        //create a temporary array be set to the new capacity
-        //take each value one by one from your original array and put them into the new temp array
-        //set your original array equal to the new temp array
-
-        // 50 30 45 12 40 null null null
-        // r/30
-        // 50 30 45 12 40 null null null
-
-
-        //30 45 12 40 null null null null
+        
         public void Remove(T item)
         {
             bool hasBeenFound = false;
-            for (int i = 0; i < count; i++)
+            for (int i = 0; i < count-1; i++)
             {
                 if (items[i].Equals(item))
                 {
                     hasBeenFound = true;
                 }
-
+                
                 
                 if (hasBeenFound == true)
                 {
                     items[i] = items[i + 1];
                 }
-
+                
             }
-           
+            
 
         }
-        //items[i].Equals(item)
-
-        //30 12 45 70 12 null null null
-        //Remove(12)
-        //
-        //30 45 70 12 null null null null
-
-
-
-        public IEnumerator GetEnumerator()
-        {
-            for (int i = 0; i < count; i++)
-            {
-                yield return CustomList<T>;
-            }
-        }
-
-
-
-
-
+       
+    //
 
 
 

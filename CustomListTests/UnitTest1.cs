@@ -130,7 +130,7 @@ namespace CustomListTests
             // assert
             Assert.AreEqual(expected, actual);
         }
-        //Remove test 1//////////////////////////////////////////mod
+        //Remove test 1//////////////////////////////////////////
         [TestMethod]
         public void Remove_RemovingOneValueFromCustomList_CountOfCustomListDecrements()
         {
